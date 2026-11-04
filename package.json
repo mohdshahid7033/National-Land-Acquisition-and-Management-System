@@ -1,0 +1,18 @@
+{
+  "name": "nlams-telangana",
+  "version": "1.0.0",
+  "description": "National Land Acquisition & Management System — Telangana (SIH 2026 · PS 26016). Zero-dependency full-stack prototype: vanilla JS SPA + Node std-lib REST API.",
+  "private": true,
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node --watch backend/src/server.js",
+    "test": "node scripts/smoke.js",
+    "build": "python3 scripts/build.py",
+    "map": "python3 scripts/build_map.py",
+    "deck": "python3 scripts/build_deck.py && python3 scripts/build_sih_pdf.py",
+    "verify": "node scripts/smoke.js && python3 scripts/build.py",
+    "report": "python3 scripts/build_report.py",
+    "workdone": "python3 scripts/build_workdone.py"
+  },
+  "license": "MIT"
+}

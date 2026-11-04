@@ -1,0 +1,14 @@
+{
+  "name": "nlams-backend",
+  "version": "1.0.0",
+  "description": "NLAMS Telangana — REST API server (PostgreSQL database integration)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "pg": "^8.11.0"
+  },
+  "license": "MIT"
+}

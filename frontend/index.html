@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NLAMS · Telangana — Land Acquisition & Management System</title>
+<!--
+  ─────────────────────────────────────────────────────────────────────
+  NLAMS · Telangana — development entry point (tree-structured build)
+
+  PROJECT TREE
+  ├── frontend/index.html   ← you are here (SPA entry, loads the src tree)
+  ├── frontend/src/         ← css · js modules · assets
+  ├── backend/src/          ← REST API (Node std-lib) + schema.sql
+  ├── dist/index.html       ← single-file bundle (offline demo, generated)
+  ├── css → frontend/src/css
+  ├── js → frontend/src/js
+  │   ├── 01-config.js      constants · stages · parcel palette
+  │   ├── 02-utils.js       DOM/format helpers · icons · toasts · modals
+  │   ├── 03-map-data.js    Telangana geometry (generated from GeoJSON)
+  │   ├── 04-data.js        demo dataset (projects/alerts/users)
+  │   ├── 05-engine.js      GIS engine · route alignment · corridors
+  │   ├── 06-state.js       app state · session persistence
+  │   ├── 07-views-login.js
+  │   ├── 08-views-shell.js
+  │   ├── 09-views-dashboard.js
+  │   ├── 10-views-gis.js   map rendering · drill-down · zoom/pan
+  │   ├── 11-views-projects.js
+  │   ├── 12-views-modules.js  acquisition · compensation · alerts
+  │   └── 13-app.js         render loop · events · boot
+  ├── assets/               emblem · login background
+  ├── data/telangana.geojson
+  ├── tools/                build_map.py · build.py · smoke.js
+  └── docs/                 SIH submission + pitch decks
+
+  Rebuild the offline single file:  python3 tools/build.py
+  Run regression checks:            node tools/smoke.js
+  ─────────────────────────────────────────────────────────────────────
+-->
+<link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+<div id="app"></div>
+<div id="toasts"></div>
+<script src="src/js/01-config.js"></script>
+<script src="src/js/02-utils.js"></script>
+<script src="src/js/03-map-data.js"></script>
+<script src="src/js/04-data.js"></script>
+<script src="src/js/05-engine.js"></script>
+<script src="src/js/06-state.js"></script>
+<script src="src/js/07-views-login.js"></script>
+<script src="src/js/08-views-shell.js"></script>
+<script src="src/js/09-views-dashboard.js"></script>
+<script src="src/js/10-views-gis.js"></script>
+<script src="src/js/11-views-projects.js"></script>
+<script src="src/js/12-views-modules.js"></script>
+<script src="src/js/13-app.js"></script>
+</body>
+</html>
