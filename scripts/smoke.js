@@ -6,13 +6,15 @@ const ROOT = path.dirname(__dirname);
 
 const els = {}; globalThis.els = els;
 const mkel = id => els[id] = els[id] || {id, innerHTML:'', appendChild:()=>{}, remove:()=>{}, style:{}, value:'',
-  classList:{add:()=>{},remove:()=>{},toggle:()=>{}}, addEventListener:()=>{}, querySelectorAll:()=>[],
+  classList:{add:()=>{},remove:()=>{},toggle:()=>{}}, addEventListener:()=>{}, querySelectorAll:()=>[], querySelector:()=>null,
   setAttribute:()=>{}, dataset:{}, getBoundingClientRect:()=>({left:0,top:0,width:100,height:100}),
   viewBox:{baseVal:{x:0,y:0,width:100,height:100}}};
 const store = {};
 global.sessionStorage = {getItem:k=>store[k]||null, setItem:(k,v)=>{store[k]=v}, removeItem:k=>{delete store[k]}};
-global.document = {getElementById:mkel, addEventListener:()=>{}, createElement:()=>mkel('t'+Math.random()), body:{appendChild:()=>{}}};
-global.window = {addEventListener:()=>{}};
+global.document = {getElementById:mkel, addEventListener:()=>{}, createElement:()=>mkel('t'+Math.random()), body:{appendChild:()=>{}}, querySelectorAll:()=>[], querySelector:()=>null};
+global.window = {addEventListener:()=>{}, setInterval:()=>0, clearInterval:()=>{}};
+global.setInterval = () => 0;
+global.clearInterval = () => {};
 global.fs = fs;
 
 const files = fs.readdirSync(path.join(ROOT,'frontend/src/js')).filter(f=>f.endsWith('.js')).sort();
